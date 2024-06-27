@@ -28,19 +28,13 @@ public class Student
 
     @Column(name = "nationalID",nullable = false)
     private  String nationalID;
-    @Column(name = "gender",nullable = false)
-    private  String gender;
     @Column(name = "email",nullable = false)
     private  String email;
-    @Column(name = "course",nullable = false)
-    private  String course;
+    @Column(name = "programme",nullable = false)
+    private  String programme;
 
-    @Column(name = "faculty",nullable = false)
-    private  String  faculty;
-
-
-
-
+    @Column(name = "address",nullable = false)
+    private  String  address;
 
 
 

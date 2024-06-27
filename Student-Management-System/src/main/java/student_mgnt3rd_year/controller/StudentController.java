@@ -16,14 +16,14 @@ import java.util.NoSuchElementException;
  **/
 
 @RestController
-@RequestMapping("/api-student")
+@RequestMapping("api/product")
 public class StudentController
 {
 @Autowired
     private StudentService studentService;
 
 
-@PostMapping("/adding/students")
+@PostMapping//("/adding/students")
 
     public String addStudent(@RequestBody Student student) {
         studentService.saveStudent(student);

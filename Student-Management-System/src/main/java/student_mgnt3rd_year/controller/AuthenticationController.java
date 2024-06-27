@@ -31,7 +31,7 @@ public class AuthenticationController
     private UserService userService;
 
     @PostMapping("/sign-up")
-
+/*
     public ResponseEntity<?> registerUser(@RequestBody User user){
         try{
             userService.saveUser(user);
@@ -40,8 +40,9 @@ public class AuthenticationController
         }catch (UserAlreadyExistsException e){
             return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
-    }
-    /*public ResponseEntity<?> signUp(@RequestBody User user )
+    }*/
+
+    public ResponseEntity<?> signUp(@RequestBody User user )
 
 
     {
@@ -51,16 +52,16 @@ public class AuthenticationController
         }
         return  new ResponseEntity<>(userService.saveUser(user),HttpStatus.CREATED);
 
-    }*/
+    }
 
     @PostMapping("sign-in")
     public  ResponseEntity<?> signIn(@RequestBody User user)
-    /*{
+    {
         return  new ResponseEntity<>(authenticationService.signInAndReturnJWT(user),HttpStatus.OK);
 
-    }*/
+    }
 
-    {
+    /*{
         try{
             authenticationService.signInAndReturnJWT(user);
             return  ResponseEntity.ok("You have successfully login");
@@ -69,7 +70,7 @@ public class AuthenticationController
          return   ResponseEntity.ok("Wrong username or password")   ;
         }
 
-    }
+    }*/
 
 
 }

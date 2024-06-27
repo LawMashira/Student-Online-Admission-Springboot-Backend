@@ -57,13 +57,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
         http.authorizeRequests()
                 .antMatchers("/api/authentication/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/product").permitAll()
-                .antMatchers("/api/product/**").hasRole(Role.ADMIN.name())
+                //.antMatchers("/api/product/**").hasRole(Role.ADMIN.name())
+                .antMatchers("/api/product/**").hasRole(Role.USER.name())
                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
-    //Why don't we describe it as a component, because of scope.
+    //Why don't we describe it as a component, because of scope
     @Bean
     public JwtAuthorizationFilter jwtAuthorizationFilter()
     {
